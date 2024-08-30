@@ -6,23 +6,14 @@ const Category = ({ props, onSelected, state }) => {
         onSelected(props);
     }
 
-    const infoHotel = () => {
-        const servicios = props.servicios.map((s, index) => (<p>{s}</p>))
-        
-        return (
-            <>
-            <p>hola</p></>
-        )
-    }
-
     return (
         <div className={`categoryCard ${state === props ? 'selectedCard' : null}`} onClick={handleClick}>
             <img src={props.imagen} alt="" />
             <h4>{props.nombre || props.titulo}</h4>
             <p>$ {props.precio || props.costo}</p>
-            { props.estrellas && 
-            infoHotel
-            }
+            { props.estrellas ? <p>{'⭐'.repeat(props.estrellas)}</p> : null }
+            { props.ubicacion ? props.ubicacion : null }
+            { props.servicios ? <p>{props.servicios.join(', ')}</p> : null }
         </div>
     )
 }
