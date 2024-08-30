@@ -3,6 +3,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    height: 30vh;
+    height: auto;
     gap: 12px;
 }

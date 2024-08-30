@@ -12,7 +12,6 @@ const SideBar = ({selected}) => {
             <h2>Paquete</h2>
             {Object.keys(selected).map((item, index) => (
                 <>
-                    <h3>{item}</h3>
                     <p>{selected[item].nombre || selected[item].titulo}</p>
                     <p>{selected[item].precio || selected[item].costo}</p>
                 </>
